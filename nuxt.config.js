@@ -366,7 +366,7 @@ export default {
         file: "my-MM.js"
       }
     ],
-    defaultLocale: "en",
+    defaultLocale: "cn",
     lazy: true,
     langDir: "lang/"
   },
