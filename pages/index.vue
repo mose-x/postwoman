@@ -29,8 +29,8 @@
                 :lang="'javascript'"
                 :options="{
                   maxLines: responseBodyMaxLines,
-                  minLines: '16',
-                  fontSize: '16px',
+                  minLines: 24,
+                  fontSize: '14px',
                   autoScrollEditorIntoView: true,
                   showPrintMargin: false,
                   useWorker: false
@@ -40,9 +40,9 @@
           </ul>
         </pw-section>
 
-        <pw-section class="blue" label="Request" ref="request">
+        <pw-section class="blue" label="Request" ref="request" style="font-size: 12px">
           <ul>
-            <li>
+            <li style="max-width: 10%">
               <label for="method">{{ $t("method") }}</label>
               <span class="select-wrapper">
                 <select id="method" v-model="method" @change="methodChange">
@@ -58,7 +58,7 @@
                 </select>
               </span>
             </li>
-            <li>
+            <li style="max-width: 25%">
               <label for="url">{{ $t("url") }}</label>
               <input
                 :class="{ error: !isValidURL }"
@@ -79,17 +79,7 @@
                 @input="pathInputHandler"
               />
             </li>
-            <li>
-              <label for="label">{{ $t("label") }}</label>
-              <input
-                id="label"
-                name="label"
-                type="text"
-                v-model="label"
-                placeholder="(optional)"
-              />
-            </li>
-            <li>
+            <li style="max-width: 18%">
               <label class="hide-on-small-screen" for="send">&nbsp;</label>
               <button
                 :disabled="!isValidURL"
@@ -228,9 +218,9 @@
                     v-model="rawParams"
                     :lang="'json'"
                     :options="{
-                      maxLines: '16',
-                      minLines: '8',
-                      fontSize: '16px',
+                      maxLines: 24,
+                      minLines: 8,
+                      fontSize: '14px',
                       autoScrollEditorIntoView: true,
                       showPrintMargin: false,
                       useWorker: false
@@ -315,123 +305,11 @@
           </div>
         </pw-section>
 
-        <section id="options">
-          <input id="tab-one" type="radio" name="options" checked="checked" />
-          <label for="tab-one">{{ $t("authentication") }}</label>
-          <div class="tab">
-            <pw-section
-              class="cyan"
-              label="Authentication"
-              ref="authentication"
-            >
-              <ul>
-                <li>
-                  <div class="flex-wrap">
-                    <label for="auth">{{ $t("authentication") }}</label>
-                    <div>
-                      <button
-                        class="icon"
-                        @click="clearContent('auth', $event)"
-                        v-tooltip.bottom="'Clear'"
-                      >
-                        <i class="material-icons">clear_all</i>
-                      </button>
-                    </div>
-                  </div>
-                  <span class="select-wrapper">
-                    <select id="auth" v-model="auth">
-                      <option>None</option>
-                      <option>Basic</option>
-                      <option>Bearer Token</option>
-                    </select>
-                  </span>
-                </li>
-              </ul>
-              <ul v-if="auth === 'Basic'">
-                <li>
-                  <input
-                    placeholder="User"
-                    name="http_basic_user"
-                    v-model="httpUser"
-                  />
-                </li>
-                <li>
-                  <input
-                    placeholder="Password"
-                    name="http_basic_passwd"
-                    :type="passwordFieldType"
-                    v-model="httpPassword"
-                  />
-                </li>
-                <div>
-                  <li>
-                    <button
-                      class="icon"
-                      id="switchVisibility"
-                      ref="switchVisibility"
-                      @click="switchVisibility"
-                    >
-                      <i
-                        class="material-icons"
-                        v-if="passwordFieldType === 'text'"
-                        >visibility</i
-                      >
-                      <i
-                        class="material-icons"
-                        v-if="passwordFieldType !== 'text'"
-                        >visibility_off</i
-                      >
-                    </button>
-                  </li>
-                </div>
-              </ul>
-              <ul v-else-if="auth === 'Bearer Token'">
-                <li>
-                  <input
-                    placeholder="Token"
-                    name="bearer_token"
-                    v-model="bearerToken"
-                  />
-                </li>
-              </ul>
-              <div class="flex-wrap">
-                <pw-toggle
-                  :on="!urlExcludes.auth"
-                  @change="setExclude('auth', !$event)"
-                >
-                  {{ $t("include_in_url") }}
-                </pw-toggle>
-              </div>
-            </pw-section>
-          </div>
-          <input id="tab-two" type="radio" name="options" />
+        <section id="options" style="font-size: 13px">
+          <input id="tab-two" type="radio" name="options"  checked="checked"/>
           <label for="tab-two">{{ $t("headers") }}</label>
           <div class="tab">
-            <pw-section class="orange" label="Headers" ref="headers">
-              <ul>
-                <li>
-                  <div class="flex-wrap">
-                    <label for="headerList">{{ $t("header_list") }}</label>
-                    <div>
-                      <button
-                        class="icon"
-                        @click="clearContent('headers', $event)"
-                        v-tooltip.bottom="'Clear'"
-                      >
-                        <i class="material-icons">clear_all</i>
-                      </button>
-                    </div>
-                  </div>
-                  <textarea
-                    id="headerList"
-                    readonly
-                    v-textarea-auto-height="headerString"
-                    v-model="headerString"
-                    placeholder="(add at least one header)"
-                    rows="1"
-                  ></textarea>
-                </li>
-              </ul>
+            <pw-section class="orange" label="Headers" ref="headers" style="font-size: 12px">
               <ul v-for="(header, index) in headers" :key="index">
                 <li>
                   <autocomplete
@@ -475,11 +353,11 @@
                   </li>
                 </div>
               </ul>
-              <ul>
+              <ul style="font-size: 14px">
                 <li>
                   <button class="icon" @click="addRequestHeader">
                     <i class="material-icons">add</i>
-                    <span>{{ $t("add_new") }}</span>
+                    <span style="font-size: 12px">{{ $t("add_new") }}</span>
                   </button>
                 </li>
               </ul>
@@ -488,31 +366,7 @@
           <input id="tab-three" type="radio" name="options" />
           <label for="tab-three">{{ $t("parameters") }}</label>
           <div class="tab">
-            <pw-section class="pink" label="Parameters" ref="parameters">
-              <ul>
-                <li>
-                  <div class="flex-wrap">
-                    <label for="paramList">{{ $t("parameter_list") }}</label>
-                    <div>
-                      <button
-                        class="icon"
-                        @click="clearContent('parameters', $event)"
-                        v-tooltip.bottom="'Clear'"
-                      >
-                        <i class="material-icons">clear_all</i>
-                      </button>
-                    </div>
-                  </div>
-                  <textarea
-                    id="paramList"
-                    readonly
-                    v-textarea-auto-height="queryString"
-                    v-model="queryString"
-                    placeholder="(add at least one parameter)"
-                    rows="1"
-                  ></textarea>
-                </li>
-              </ul>
+            <pw-section class="pink" label="Parameters" ref="parameters" style="font-size: 12px">
               <ul v-for="(param, index) in params" :key="index">
                 <li>
                   <input
@@ -557,26 +411,12 @@
                 <li>
                   <button class="icon" @click="addRequestParam">
                     <i class="material-icons">add</i>
-                    <span>{{ $t("add_new") }}</span>
+                    <span style="font-size: 12px">{{ $t("add_new") }}</span>
                   </button>
                 </li>
               </ul>
             </pw-section>
           </div>
-          <!-- <div class="flex-wrap">
-            <span></span>
-            <button
-              class="icon hide-on-small-screen"
-              @click="activeSidebar = !activeSidebar"
-              v-tooltip="{
-                content: activeSidebar ? 'Hide Sidebar' : 'Show Sidebar'
-              }"
-            >
-              <i class="material-icons">
-                {{ activeSidebar ? "last_page" : "first_page" }}
-              </i>
-            </button>
-          </div> -->
         </section>
 
         <pw-section
@@ -584,28 +424,19 @@
           id="response"
           label="Response"
           ref="response"
+          style="font-size: 12px"
         >
-          <ul>
+          <ul style="font-size: 10px;margin-top: -5px">
             <li>
-              <label for="status">{{ $t("status") }}</label>
-              <input
-                :class="statusCategory ? statusCategory.className : ''"
-                :value="response.status || '(waiting to send request)'"
-                ref="status"
-                id="status"
-                name="status"
-                readonly
-                type="text"
-              />
+              <label for="status">{{ $t("status") }} : {{response.status || '(waiting to send request)'}}</label>
             </li>
           </ul>
-          <ul v-for="(value, key) in response.headers" :key="key">
+          <ul v-for="(value, key) in response.headers" :key="key" style="font-size: 10px;margin-top: -5px">
             <li>
-              <label :for="key">{{ key }}</label>
-              <input :id="key" :value="value" :name="key" readonly />
+              <label :for="key">{{ key }} : {{value}}</label>
             </li>
           </ul>
-          <ul v-if="response.body">
+          <ul v-if="response.body" style="margin-top: -5px">
             <li>
               <div class="flex-wrap">
                 <label for="body">{{ $t("response") }}</label>
@@ -651,8 +482,8 @@
                   :lang="responseBodyType"
                   :options="{
                     maxLines: responseBodyMaxLines,
-                    minLines: '16',
-                    fontSize: '16px',
+                    minLines: 24,
+                    fontSize: '13px',
                     autoScrollEditorIntoView: true,
                     readOnly: true,
                     showPrintMargin: false,
@@ -683,7 +514,8 @@
           </ul>
         </pw-section>
       </div>
-      <aside v-if="activeSidebar" class="sticky-inner inner-right">
+
+      <aside v-if="activeSidebar" class="sticky-inner inner-right" style="font-size: 13px">
         <section>
           <input id="history-tab" type="radio" name="side" checked="checked" />
           <label for="history-tab">{{ $t("history") }}</label>
@@ -693,7 +525,7 @@
           <input id="collection-tab" type="radio" name="side" />
           <label for="collection-tab">{{ $t("collections") }}</label>
           <div class="tab">
-            <pw-section class="yellow" label="Collections" ref="collections">
+            <pw-section class="yellow" label="Collections" ref="collections" style="font-size: 12px">
               <collections />
             </pw-section>
           </div>
@@ -1052,7 +884,7 @@ export default {
       urlExcludes: {},
       responseBodyText: "",
       responseBodyType: "text",
-      responseBodyMaxLines: 16,
+      responseBodyMaxLines: 24,
       activeSidebar: true
     };
   },
@@ -1859,7 +1691,7 @@ export default {
     ToggleExpandResponse() {
       this.expandResponse = !this.expandResponse;
       this.responseBodyMaxLines =
-        this.responseBodyMaxLines == Infinity ? 16 : Infinity;
+        this.responseBodyMaxLines == Infinity ? 24 : Infinity;
     },
     copyResponse() {
       this.$refs.copyResponse.innerHTML = this.doneButton;

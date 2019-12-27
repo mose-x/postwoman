@@ -44,7 +44,7 @@ TODO:
 
     <div class="flex-wrap">
       <div>
-        <button class="icon" @click="displayModalAdd(true)">
+        <button class="icon" @click="displayModalAdd(true)" style="font-size: 12px">
           <i class="material-icons">add</i>
           <span>New</span>
         </button>
@@ -57,15 +57,6 @@ TODO:
         >
           <i class="material-icons">import_export</i>
         </button>
-        <!-- <a
-          href="https://github.com/liyasthomas/postwoman/wiki/Collections"
-          target="_blank"
-          rel="noopener"
-        >
-          <button class="icon" v-tooltip="'Wiki'">
-            <i class="material-icons">help</i>
-          </button>
-        </a> -->
       </div>
     </div>
 

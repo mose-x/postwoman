@@ -2,7 +2,7 @@
   <div>
     <div class="flex-wrap">
       <div>
-        <button class="icon" @click="toggleShowChildren">
+        <button class="icon" @click="toggleShowChildren" style="font-size: 12px">
           <i class="material-icons" v-show="!showChildren">arrow_right</i>
           <i class="material-icons" v-show="showChildren">arrow_drop_down</i>
           <i class="material-icons">folder</i>

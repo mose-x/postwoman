@@ -1,174 +1,14 @@
 <template>
-  <pw-section class="green" icon="history" label="History" ref="history">
-    <ul>
-      <li id="filter-history">
+  <pw-section class="green" icon="history" label="History" ref="history" style="font-size: 12px">
+    <div v-if="history.length !== 0">
+      <div class="flex-wrap" v-if="!isClearingHistory">
         <input
+          style="max-width: 49%"
           aria-label="Search"
           type="text"
           placeholder="search history"
           v-model="filterText"
         />
-      </li>
-    </ul>
-    <virtual-list
-      class="virtual-list"
-      :class="{ filled: filteredHistory.length }"
-      :size="185"
-      :remain="Math.min(5, filteredHistory.length)"
-    >
-      <ul v-for="(entry, index) in filteredHistory" :key="index" class="entry">
-        <div class="show-on-large-screen">
-          <button
-            class="icon"
-            :class="{ stared: entry.star }"
-            @click="toggleStar(index)"
-            v-tooltip="{ content: !entry.star ? 'Add star' : 'Remove star' }"
-          >
-            <i class="material-icons">
-              {{ entry.star ? "star" : "star_border" }}
-            </i>
-          </button>
-          <li>
-            <input
-              aria-label="Label"
-              type="text"
-              readonly
-              :value="entry.label"
-              placeholder="No label"
-              class="bg-color"
-            />
-          </li>
-          <!-- <li>
-            <button
-              class="icon"
-              v-tooltip="{
-                content: !entry.usesScripts
-                  ? 'No pre-request script'
-                  : 'Used pre-request script'
-              }"
-            >
-              <i class="material-icons">
-                {{ !entry.usesScripts ? "http" : "code" }}
-              </i>
-            </button>
-          </li> -->
-          <v-popover>
-            <button class="tooltip-target icon" v-tooltip="'Options'">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <template slot="popover">
-              <div>
-                <button
-                  class="icon"
-                  :id="'use-button#' + index"
-                  @click="useHistory(entry)"
-                  aria-label="Edit"
-                  v-close-popover
-                >
-                  <i class="material-icons">restore</i>
-                  <span>Restore</span>
-                </button>
-              </div>
-              <div>
-                <button
-                  class="icon"
-                  :id="'delete-button#' + index"
-                  @click="deleteHistory(entry)"
-                  aria-label="Delete"
-                  v-close-popover
-                >
-                  <i class="material-icons">delete</i>
-                  <span>Delete</span>
-                </button>
-              </div>
-            </template>
-          </v-popover>
-        </div>
-        <div class="show-on-large-screen">
-          <li class="method-list-item">
-            <input
-              aria-label="Method"
-              type="text"
-              readonly
-              :value="entry.method"
-              :class="findEntryStatus(entry).className"
-              :style="{ '--status-code': entry.status }"
-            />
-            <span
-              class="entry-status-code"
-              :class="findEntryStatus(entry).className"
-              :style="{ '--status-code': entry.status }"
-              >{{ entry.status }}</span
-            >
-          </li>
-        </div>
-        <div class="show-on-large-screen">
-          <li>
-            <input
-              aria-label="URL"
-              type="text"
-              readonly
-              :value="entry.url"
-              placeholder="No URL"
-            />
-          </li>
-          <li>
-            <input
-              aria-label="Path"
-              type="text"
-              readonly
-              :value="entry.path"
-              placeholder="No path"
-            />
-          </li>
-        </div>
-        <transition name="fade">
-          <div v-if="showMore" class="show-on-large-screen">
-            <li>
-              <input
-                aria-label="Time"
-                type="text"
-                readonly
-                :value="entry.time"
-                v-tooltip="entry.date"
-              />
-            </li>
-            <li>
-              <input
-                aria-label="Duration"
-                type="text"
-                readonly
-                :value="entry.duration"
-                placeholder="No duration"
-              />
-            </li>
-            <li>
-              <input
-                aria-label="Pre Request Script"
-                type="text"
-                readonly
-                :value="entry.preRequestScript"
-                placeholder="No pre request script"
-              />
-            </li>
-          </div>
-        </transition>
-      </ul>
-    </virtual-list>
-    <ul
-      :class="{ hidden: filteredHistory.length != 0 || history.length === 0 }"
-    >
-      <li>
-        <label>Nothing found "{{ filterText }}"</label>
-      </li>
-    </ul>
-    <ul v-if="history.length === 0">
-      <li>
-        <label>History is empty</label>
-      </li>
-    </ul>
-    <div v-if="history.length !== 0">
-      <div class="flex-wrap" v-if="!isClearingHistory">
         <button
           class="icon"
           id="clear-history-button"
@@ -256,6 +96,128 @@
         </div>
       </div>
     </div>
+    <virtual-list
+      class="virtual-list"
+      :class="{ filled: filteredHistory.length }"
+      :size="185"
+      :remain="Math.min(5, filteredHistory.length)"
+    >
+      <ul v-for="(entry, index) in filteredHistory" :key="index" class="entry">
+        <div class="show-on-large-screen">
+          <li class="method-list-item">
+            <input
+              aria-label="Method"
+              type="text"
+              readonly
+              :value="entry.method"
+              :class="findEntryStatus(entry).className"
+              :style="{ '--status-code': entry.status }"
+            />
+            <span
+              style="margin-right: 50%"
+              class="entry-status-code"
+              :class="findEntryStatus(entry).className"
+              :style="{ '--status-code': entry.status }"
+              >{{ entry.status }}</span
+            >
+          </li>
+          <v-popover>
+            <button class="tooltip-target icon" v-tooltip="'Options'">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <template slot="popover">
+              <div>
+                <button
+                  class="icon"
+                  :id="'use-button#' + index"
+                  @click="useHistory(entry)"
+                  aria-label="Edit"
+                  v-close-popover
+                >
+                  <i class="material-icons">restore</i>
+                  <span>Restore</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="icon"
+                  :id="'delete-button#' + index"
+                  @click="deleteHistory(entry)"
+                  aria-label="Delete"
+                  v-close-popover
+                >
+                  <i class="material-icons">delete</i>
+                  <span>Delete</span>
+                </button>
+              </div>
+            </template>
+          </v-popover>
+        </div>
+        <div class="show-on-large-screen">
+          <li style="max-width: 40%">
+            <input
+              aria-label="URL"
+              type="text"
+              readonly
+              :value="entry.url"
+              placeholder="No URL"
+            />
+          </li>
+          <li>
+            <input
+              aria-label="Path"
+              type="text"
+              readonly
+              :value="entry.path"
+              placeholder="No path"
+            />
+          </li>
+        </div>
+        <transition name="fade">
+          <div v-if="showMore" class="show-on-large-screen">
+            <li>
+              <input
+                aria-label="Time"
+                type="text"
+                readonly
+                :value="entry.time"
+                v-tooltip="entry.date"
+              />
+            </li>
+            <li>
+              <input
+                aria-label="Duration"
+                type="text"
+                readonly
+                :value="entry.duration"
+                placeholder="No duration"
+              />
+            </li>
+            <li>
+              <input
+                aria-label="Pre Request Script"
+                type="text"
+                readonly
+                :value="entry.preRequestScript"
+                placeholder="No pre request script"
+              />
+            </li>
+          </div>
+        </transition>
+      </ul>
+    </virtual-list>
+    <ul
+      :class="{ hidden: filteredHistory.length != 0 || history.length === 0 }"
+    >
+      <li>
+        <label>Nothing found "{{ filterText }}"</label>
+      </li>
+    </ul>
+    <ul v-if="history.length === 0">
+      <li>
+        <label>History is empty</label>
+      </li>
+    </ul>
   </pw-section>
 </template>
 
