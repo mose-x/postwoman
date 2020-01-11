@@ -154,7 +154,7 @@
           </v-popover>
         </div>
         <div class="show-on-large-screen">
-          <li style="max-width: 40%">
+          <li style="max-width: 100%">
             <input
               aria-label="URL"
               type="text"
@@ -163,15 +163,15 @@
               placeholder="No URL"
             />
           </li>
-          <li>
-            <input
-              aria-label="Path"
-              type="text"
-              readonly
-              :value="entry.path"
-              placeholder="No path"
-            />
-          </li>
+<!--          <li>-->
+<!--            <input-->
+<!--              aria-label="Path"-->
+<!--              type="text"-->
+<!--              readonly-->
+<!--              :value="entry.path"-->
+<!--              placeholder="No path"-->
+<!--            />-->
+<!--          </li>-->
         </div>
         <transition name="fade">
           <div v-if="showMore" class="show-on-large-screen">

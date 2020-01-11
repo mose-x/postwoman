@@ -58,7 +58,7 @@
                 </select>
               </span>
             </li>
-            <li style="max-width: 25%">
+            <li style="max-width: 80%">
               <label for="url">{{ $t("url") }}</label>
               <input
                 :class="{ error: !isValidURL }"
@@ -69,16 +69,16 @@
                 v-model="url"
               />
             </li>
-            <li>
-              <label for="path">{{ $t("path") }}</label>
-              <input
-                @keyup.enter="isValidURL ? sendRequest() : null"
-                id="path"
-                name="path"
-                v-model="path"
-                @input="pathInputHandler"
-              />
-            </li>
+<!--            <li>-->
+<!--              <label for="path">{{ $t("path") }}</label>-->
+<!--              <input-->
+<!--                @keyup.enter="isValidURL ? sendRequest() : null"-->
+<!--                id="path"-->
+<!--                name="path"-->
+<!--                v-model="path"-->
+<!--                @input="pathInputHandler"-->
+<!--              />-->
+<!--            </li>-->
             <li style="max-width: 18%">
               <label class="hide-on-small-screen" for="send">&nbsp;</label>
               <button
