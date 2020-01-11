@@ -1,7 +1,4 @@
 <div align="center">
-  <a href="https://postwoman.io"><img src="static/logo.png" alt="Postwoman.io logo" height="160"></a>
-  <br>
-  <br>
   <p>
     API request builder - A free, fast, and beautiful alternative to Postman
   </p>
@@ -28,13 +25,6 @@
 **Chat: _[Telegram](https://t.me/postwoman_app), [Discord](https://discord.gg/GAMWxmR)_**
 
 **Donate: _[PayPal](https://www.paypal.me/liyascthomas), [Open Collective](https://opencollective.com/postwoman), [Patreon](https://www.patreon.com/liyasthomas)_**
-
-<div align="center">
-  <br>
-  <img src="static/images/screenshot1.png" alt="Screenshot1" width="100%">
-  <img src="static/images/screenshot2.png" alt="Screenshot2" width="100%">
-  <br>
-</div>
 
 ### Features ✨
 
@@ -224,8 +214,6 @@ _Add-ons are developed and maintained under **[Official Postwoman Organization](
 
 **To find out more, please check out [Postwoman Wiki](https://github.com/liyasthomas/postwoman/wiki).**
 
-## Demo 🚀 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fpostwoman.io&logo=Postwoman)](https://postwoman.io)
-
 [postwoman.io](https://postwoman.io)
 
 <a href="https://www.netlify.com">
@@ -275,146 +263,3 @@ docker run -p 3000:3000 liyasthomas/postwoman:latest
 #build
 docker build -t postwoman:latest
 ```
-
-## Releasing 🏷️
-
-1. [Clone this repo](https://help.github.com/en/articles/cloning-a-repository) with git.
-2. Install dependencies by running `npm install` within the directory that you cloned (probably `postwoman`).
-3. Build the release files with `npm run build`.
-4. Find the built project in `./dist`.
-
-## Contributing 🍰
-
-Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our [CODE OF CONDUCT](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
-
-## Continuous Integration 💚 [![Travis Build Status](https://img.shields.io/travis/com/liyasthomas/postwoman?logo=Travis)](https://travis-ci.com/liyasthomas/postwoman)
-
-We use [Travis CI](https://travis-ci.com) for continuous integration. Check out our [Travis CI Status](https://travis-ci.com/liyasthomas/postwoman).
-
-## Versioning 🔖 [![GitHub release](https://img.shields.io/github/release/liyasthomas/postwoman/all?logo=GitHub)](https://github.com/liyasthomas/postwoman/releases/latest)
-
-This project is developed by [Liyas Thomas](https://github.com/liyasthomas) using the [Semantic Versioning specification](https://semver.org). For the versions available, see the [releases on this repository](https://github.com/liyasthomas/postwoman/releases).
-
-## Change log 📝
-
-See the [CHANGELOG](CHANGELOG.md) file for details.
-
-## Authors 🔮
-
-### Lead Developers
-
-* **[Liyas Thomas](https://github.com/liyasthomas)** - *Author*
-* **[Caneco](https://twitter.com/caneco)** - *Designer*
-
-### Testing and Debugging
-
-* ([contributors](https://github.com/liyasthomas/postwoman/graphs/contributors))
-
-### Collaborators <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://liyasthomas.web.app"><img src="https://avatars1.githubusercontent.com/u/10395817?v=4" width="100px;" alt="Liyas Thomas"/><br /><sub><b>Liyas Thomas</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=liyasthomas" title="Code">💻</a> <a href="#design-liyasthomas" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/NBTX"><img src="https://avatars3.githubusercontent.com/u/43181178?v=4" width="100px;" alt="John Harker"/><br /><sub><b>John Harker</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=NBTX" title="Code">💻</a> <a href="#design-NBTX" title="Design">🎨</a></td>
-    <td align="center"><a href="https://nicholaslaroux.com"><img src="https://avatars0.githubusercontent.com/u/1557529?v=4" width="100px;" alt="Nicholas La Roux"/><br /><sub><b>Nicholas La Roux</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=larouxn" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/yubathom"><img src="https://avatars3.githubusercontent.com/u/4117768?v=4" width="100px;" alt="Thomas Yuba"/><br /><sub><b>Thomas Yuba</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=yubathom" title="Code">💻</a></td>
-    <td align="center"><a href="http://www.linkedin.com/in/nickpalenchar"><img src="https://avatars1.githubusercontent.com/u/7539781?v=4" width="100px;" alt="Nick Palenchar"/><br /><sub><b>Nick Palenchar</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=nickpalenchar" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/AndrewBastin"><img src="https://avatars2.githubusercontent.com/u/9131943?v=4" width="100px;" alt="Andrew Bastin"/><br /><sub><b>Andrew Bastin</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=AndrewBastin" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/vlad0337187"><img src="https://avatars1.githubusercontent.com/u/12682937?v=4" width="100px;" alt="Vladislav"/><br /><sub><b>Vladislav</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=vlad0337187" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/izerozlu"><img src="https://avatars3.githubusercontent.com/u/17386157?v=4" width="100px;" alt="izerozlu"/><br /><sub><b>izerozlu</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=izerozlu" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/JacobAnavisca"><img src="https://avatars2.githubusercontent.com/u/21232366?v=4" width="100px;" alt="Jacob Anavisca"/><br /><sub><b>Jacob Anavisca</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=JacobAnavisca" title="Code">💻</a></td>
-    <td align="center"><a href="http://nityanandagohain.github.io"><img src="https://avatars3.githubusercontent.com/u/26831659?v=4" width="100px;" alt="Nityananda Gohain"/><br /><sub><b>Nityananda Gohain</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=nityanandagohain" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/hosseinnedaee"><img src="https://avatars2.githubusercontent.com/u/42691357?v=4" width="100px;" alt="Hossein Nedaee"/><br /><sub><b>Hossein Nedaee</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=hosseinnedaee" title="Code">💻</a></td>
-    <td align="center"><a href="https://ghuser.io/jamesgeorge007"><img src="https://avatars2.githubusercontent.com/u/25279263?v=4" width="100px;" alt="James George"/><br /><sub><b>James George</b></sub></a><br /><a href="https://github.com/liyasthomas/postwoman/commits?author=jamesgeorge007" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-See the list of [contributors](https://github.com/liyasthomas/postwoman/graphs/contributors) who participated in this project.
-
-### Thanks
-
-* [dev.to 👩‍💻👨‍💻](https://dev.to)
-
-### Code Contributors
-
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-
-<a href="https://github.com/liyasthomas/postwoman/graphs/contributors"><img src="https://opencollective.com/postwoman/contributors.svg?width=890&button=false" /></a>
-
-### Financial Contributors
-
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/postwoman/contribute)]
-
-#### Individuals
-
-<a href="https://opencollective.com/postwoman"><img src="https://opencollective.com/postwoman/individuals.svg"></a>
-
-#### Organizations
-
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/postwoman/contribute)]
-
-<a href="https://opencollective.com/postwoman/organization/0/website"><img src="https://opencollective.com/postwoman/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/1/website"><img src="https://opencollective.com/postwoman/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/2/website"><img src="https://opencollective.com/postwoman/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/3/website"><img src="https://opencollective.com/postwoman/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/4/website"><img src="https://opencollective.com/postwoman/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/5/website"><img src="https://opencollective.com/postwoman/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/6/website"><img src="https://opencollective.com/postwoman/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/7/website"><img src="https://opencollective.com/postwoman/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/8/website"><img src="https://opencollective.com/postwoman/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/postwoman/organization/9/website"><img src="https://opencollective.com/postwoman/organization/9/avatar.svg"></a>
-
-## License 📄
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements 🙏
-
-* Hat tip to anyone whose code was used
-* Inspirations:
-  * [Dribbble](https://dribbble.com)
-
-## Badges
-
-<table>
-<tr>
-<th>Preview</th>
-<th>Markdown code</th>
-</tr>
-<tbody>
-<tr>
-<td align="center" width="200px"><a href="https://postwoman.io"><br/><img src="https://img.shields.io/badge/Tested_on-Postwoman-202124?logo=Postwoman"/></a><br/><sub>Default<sub></td>
-<td><code>[![Postwoman](https://img.shields.io/badge/Tested_on-Postwoman-202124?logo=Postwoman)](https://postwoman.io)</code></td>
-</tr>
-<tr>
-<td align="center" width="200px"><a href="https://postwoman.io"><br/><img src="https://img.shields.io/badge/Tested_on-Postwoman-success?logo=Postwoman"/></a><br/><sub>Success<sub></td>
-<td><code>[![Postwoman](https://img.shields.io/badge/Tested_on-Postwoman-success?logo=Postwoman)](https://postwoman.io)</code></td>
-</tr>
-<tr>
-<td align="center" width="200px"><a href="https://postwoman.io"><br/><img src="https://img.shields.io/badge/Tested_on-Postwoman-critical?logo=Postwoman"/></a><br/><sub>Critical<sub></td>
-<td><code>[![Postwoman](https://img.shields.io/badge/Tested_on-Postwoman-critical?logo=Postwoman)](https://postwoman.io)</code></td>
-</tr>
-<tr>
-<td align="center" width="200px"><a href="https://postwoman.io"><br/><img src="https://img.shields.io/badge/Tested_on-Postwoman-blueviolet?logo=Postwoman"/></a><br/><sub>Custom<sub></td>
-<td><code>[![Postwoman](https://img.shields.io/badge/Tested_on-Postwoman-blueviolet?logo=Postwoman)](https://postwoman.io)</code></td>
-</tr>
-<tr>
-<td align="center" width="200px"><a href="https://postwoman.io"><br/><img src="https://img.shields.io/badge/your_text-Postwoman-hex_color_code?logo=Postwoman"/></a><br/><sub>Customize<sub></td>
-<td><code>[![Postwoman](https://img.shields.io/badge/your_text-Postwoman-hex_color_code?logo=Postwoman)](https://postwoman.io)</code></td>
-</tr>
-</tbody>
-</table>
-
-<div align="center">
-  <br>
-  <a href="https://postwoman.io"><img src="https://raw.githubusercontent.com/liyasthomas/templates/master/assets/logo.gif" alt="Postwoman.io" width="200"></a>
-  <br>
-  <h3>Happy Coding ❤︎</h3>
-</div>
