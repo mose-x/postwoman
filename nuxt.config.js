@@ -241,6 +241,19 @@ export default {
     ["@nuxtjs/toast"],
     ["@nuxtjs/google-analytics"],
     ["@nuxtjs/sitemap"],
+    // ['nuxtjs-electron', {
+    //   main: 'main.js',
+    //   build: {
+    //     warnings: false,
+    //     babel: {
+    //       presets: [ ['env', {'targets': { 'node': 7 }, 'useBuiltIns': true }] ],
+    //       plugins: ['add-module-exports']
+    //     },
+    //     extend(config, options, nuxt) {
+    //       // extend webpack config
+    //     }
+    //   }
+    // }],
     [
       "@nuxtjs/google-tag-manager",
       {
