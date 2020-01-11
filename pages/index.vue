@@ -306,7 +306,61 @@
         </pw-section>
 
         <section id="options" style="font-size: 13px">
-          <input id="tab-two" type="radio" name="options"  checked="checked"/>
+          <input id="tab-three" type="radio" name="options" checked="checked"/>
+          <label for="tab-three">{{ $t("parameters") }}</label>
+          <div class="tab">
+            <pw-section class="pink" label="Parameters" ref="parameters" style="font-size: 12px">
+              <ul v-for="(param, index) in params" :key="index">
+                <li>
+                  <input
+                    :placeholder="'parameter ' + (index + 1)"
+                    :name="'param' + index"
+                    :value="param.key"
+                    @change="
+                      $store.commit('setKeyParams', {
+                        index,
+                        value: $event.target.value
+                      })
+                    "
+                    autofocus
+                  />
+                </li>
+                <li>
+                  <input
+                    :placeholder="'value ' + (index + 1)"
+                    :name="'value' + index"
+                    :value="param.value"
+                    @change="
+                      $store.commit('setValueParams', {
+                        index,
+                        value: $event.target.value
+                      })
+                    "
+                  />
+                </li>
+                <div>
+                  <li>
+                    <button
+                      class="icon"
+                      @click="removeRequestParam(index)"
+                      id="param"
+                    >
+                      <i class="material-icons">delete</i>
+                    </button>
+                  </li>
+                </div>
+              </ul>
+              <ul>
+                <li>
+                  <button class="icon" @click="addRequestParam">
+                    <i class="material-icons">add</i>
+                    <span style="font-size: 12px">{{ $t("add_new") }}</span>
+                  </button>
+                </li>
+              </ul>
+            </pw-section>
+          </div>
+          <input id="tab-two" type="radio" name="options"/>
           <label for="tab-two">{{ $t("headers") }}</label>
           <div class="tab">
             <pw-section class="orange" label="Headers" ref="headers" style="font-size: 12px">
@@ -356,60 +410,6 @@
               <ul style="font-size: 14px">
                 <li>
                   <button class="icon" @click="addRequestHeader">
-                    <i class="material-icons">add</i>
-                    <span style="font-size: 12px">{{ $t("add_new") }}</span>
-                  </button>
-                </li>
-              </ul>
-            </pw-section>
-          </div>
-          <input id="tab-three" type="radio" name="options" />
-          <label for="tab-three">{{ $t("parameters") }}</label>
-          <div class="tab">
-            <pw-section class="pink" label="Parameters" ref="parameters" style="font-size: 12px">
-              <ul v-for="(param, index) in params" :key="index">
-                <li>
-                  <input
-                    :placeholder="'parameter ' + (index + 1)"
-                    :name="'param' + index"
-                    :value="param.key"
-                    @change="
-                      $store.commit('setKeyParams', {
-                        index,
-                        value: $event.target.value
-                      })
-                    "
-                    autofocus
-                  />
-                </li>
-                <li>
-                  <input
-                    :placeholder="'value ' + (index + 1)"
-                    :name="'value' + index"
-                    :value="param.value"
-                    @change="
-                      $store.commit('setValueParams', {
-                        index,
-                        value: $event.target.value
-                      })
-                    "
-                  />
-                </li>
-                <div>
-                  <li>
-                    <button
-                      class="icon"
-                      @click="removeRequestParam(index)"
-                      id="param"
-                    >
-                      <i class="material-icons">delete</i>
-                    </button>
-                  </li>
-                </div>
-              </ul>
-              <ul>
-                <li>
-                  <button class="icon" @click="addRequestParam">
                     <i class="material-icons">add</i>
                     <span style="font-size: 12px">{{ $t("add_new") }}</span>
                   </button>
